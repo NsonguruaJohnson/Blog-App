@@ -40,7 +40,7 @@
                                     echo "<tr>";
                                         echo "<th>ID</th>";
                                         echo "<th>Title</th>";
-                                        echo "<th>Post</th>";
+                                        echo "<th>Body</th>";
                                         echo "<th>Author</th>";
                                         echo "<th>Action</th>";
                                     echo "</tr>";
@@ -50,7 +50,7 @@
                                     echo "<tr>";
                                         echo "<td>" . $row['id'] . "</td>";
                                         echo "<td>" . $row['title'] . "</td>";
-                                        echo "<td>" . $row['post'] . "</td>";
+                                        echo "<td>" . $row['body'] . "</td>";
                                         echo "<td>" . $row['author'] . "</td>";
                                         echo "<td>";
                                             echo "<a href='read.php?id=". $row['id'] ."' title='View blog post' data-toggle='tooltip'><span class='glyphicon glyphicon-eye-open'></span></a>";

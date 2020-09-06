@@ -22,9 +22,9 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
         } else {
             $title = test_input($_POST['title']);
         }
-        if (!preg_match("/^[a-zA-Z]*$/", $title)){
-            $title_err = "Only letters and white spaces allowed";
-        }  
+        // if (!preg_match("/^[a-zA-Z]*$/", $title)){
+        //     $title_err = "Only letters and white spaces allowed";
+        // }  
         
         # This will be for author(Will be displayed when signin)
         if (empty($_POST['author'])){
@@ -32,9 +32,9 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
         } else {
             $author = test_input($_POST['author']);
         }
-        if (!preg_match("/^[a-zA-Z]*$/", $author)){
-            $author_err = "Only letters and white spaces allowed";
-        }
+        // if (!preg_match("/^[a-zA-Z]*$/", $author)){
+        //     $author_err = "Only letters and white spaces allowed";
+        // }
  
         // Validate BlogPost
         if (empty($_POST['blogpost'])){
@@ -51,7 +51,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
     // Check input errors before inserting in database
     if(empty($title_err) && empty( $author_err) && empty($blogpost_err)){
         // Prepare an insert statement
-        $sql = "INSERT INTO blog (title, author, post, created) VALUES (:title, :author, :blogpost, :created)";
+        $sql = "INSERT INTO blog (title, author, body, created) VALUES (:title, :author, :blogpost, :created)";
  
         if($stmt = $pdo->prepare($sql)){
             // Bind variables to the prepared statement as parameters
@@ -96,7 +96,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Craete Blog</title>
+    <title>Create Blog</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.css">
     <style type="text/css">
         .wrapper{
