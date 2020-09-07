@@ -119,16 +119,16 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
                             <label>Title</label>
                             <input type="text" name="title" class="form-control" value="<?php echo $title; ?>">
                             <span class="help-block"><?php echo $title_err;?></span>
+                        </div>                      
+                        <div class="form-group <?php echo (!empty($author_err)) ? 'has-error' : ''; ?>">
+                            <label>Author</label>
+                            <input type="text" name="author" class="form-control" value="<?php echo $author; ?>">
+                            <span class="help-block"><?php echo $author_err;?></span>
                         </div>
                         <div class="form-group <?php echo (!empty($blogpost_err)) ? 'has-error' : ''; ?>">
                             <label>Blog Post</label>
                             <textarea name="blogpost" class="form-control"><?php echo $blogpost; ?></textarea>
                             <span class="help-block"><?php echo $blogpost_err;?></span>
-                        </div>
-                        <div class="form-group <?php echo (!empty($author_err)) ? 'has-error' : ''; ?>">
-                            <label>Author</label>
-                            <input type="text" name="author" class="form-control" value="<?php echo $author; ?>">
-                            <span class="help-block"><?php echo $author_err;?></span>
                         </div>
                         <!-- image -->
                         <input type="submit" class="btn btn-primary" value="Save">
